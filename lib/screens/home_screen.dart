@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:skeleton/core/base_view.dart';
 import 'package:skeleton/models/user.dart';
+import 'package:skeleton/theme/test_theme.dart';
 import 'package:skeleton/view_models/user_view_model.dart';
+import 'package:skeleton/injector.dart';
 
 class HomeScreen extends StatelessWidget {
+  final _testTheme = Injector<TestTheme>();
 
   @override
   Widget build(BuildContext context) {
@@ -20,6 +23,7 @@ class HomeScreen extends StatelessWidget {
           return Center(
             child: Text(
               user.email,
+              style: TextStyle(color: _testTheme.brownGrey),
             ),
           );
         }
